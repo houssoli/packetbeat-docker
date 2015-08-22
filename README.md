@@ -1,10 +1,10 @@
 # Docker image for the Packetbeat agent
 
 Packetbeat is an open source application monitoring and
-performance management (APM) system. See 
+performance management (APM) system. See
 http://packetbeat.com for details.
 
-This runs the Packetbeat agent inside it's own container, 
+This runs the Packetbeat agent inside it's own container,
 but by mounting the network host it is able to see the
 traffic from the other containers or from the applications
 running on the hosts.
@@ -17,7 +17,7 @@ To build:
 
 To run:
 
-     docker run --net=host -d packetbeat-agent packetbeat -e -c /etc/packetbeat/packetbeat.conf
+     docker run --net=host -d packetbeat-agent packetbeat -e -c /etc/packetbeat/packetbeat.yml
 
 The `--net=host` part makes it possible to sniff the traffic
 from other containers.
@@ -27,9 +27,9 @@ from other containers.
 You can also pull the image from Docker Hub and run it like this:
 
     docker pull packetbeat/packetbeat-agent
-    docker run --net=host -t -i packetbeat/packetbeat-agent packetbeat -e -c /etc/packetbeat/packetbeat.conf
+    docker run --net=host -t -i packetbeat/packetbeat-agent packetbeat -e -c /etc/packetbeat/packetbeat.yml
 
-But note that you will need to provide your own `packetbeat.conf`.
+But note that you will need to provide your own `packetbeat.yml`.
 
 ## Thanks
 
